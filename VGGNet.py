@@ -54,5 +54,6 @@ class VGGNet(nn.Module):
 
 X = torch.randn(64,3,224,224)
 model = VGGNet(in_channels=3,num_classes=1000,arch="VGG19")
-print(model(X).shape)        
-print(model)
+y = model(X).to('cuda')
+print(y.size())        
+# print(model)
